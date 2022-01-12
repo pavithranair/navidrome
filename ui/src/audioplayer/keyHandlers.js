@@ -25,10 +25,17 @@ const keyHandlers = (audioInstance, playerState) => {
     PREV_SONG: (e) => {
       if (!e.metaKey && prevSong()) audioInstance && audioInstance.playPrev()
     },
-
+    CURRENT_SONG: () => {
+      console.log(playerState)
+      if (playerState.queue[0]?.song?.albumId){
+        window.location.href = `#/album/${playerState.queue[0].song.albumId}/show`
+      }
+    },
     NEXT_SONG: (e) => {
       if (!e.metaKey && nextSong()) audioInstance && audioInstance.playNext()
     },
+
+
   }
 }
 

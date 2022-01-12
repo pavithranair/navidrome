@@ -196,7 +196,7 @@ const Player = () => {
     [dispatch, dataProvider]
   )
 
-  const onCoverClick = useCallback((mode, audioLists, audioInfo) => {
+  const onCoverClick = useCallback((mode, audioInfo) => {
     if (mode === 'full' && audioInfo?.song?.albumId) {
       window.location.href = `#/album/${audioInfo.song.albumId}/show`
     }
